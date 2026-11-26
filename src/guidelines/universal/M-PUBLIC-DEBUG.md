@@ -21,7 +21,8 @@ struct UserSecret(String);
 
 impl Debug for UserSecret {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserSecret(...)")
+        let Self(_) = self;
+        f.debug_tuple("UserSecret").finish_non_exhaustive()
     }
 }
 
